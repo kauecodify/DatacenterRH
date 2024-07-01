@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Datacenter-RH</title>
+</head>
+
+<body>
+
+<header>
+    <img src="spy.png" width="200px" alt="Logo">
+    <h1>RHSpy</h1>
+</header>
+
+<nav>
+    <a href="index.html" class="btn-back-home">Voltar para Home</a>
+</nav>
+
+<section class="cadastrar">
+    <h4>Cadastrar</h4>
+
+    <form action="cadastro.php" method="POST" class="forms">
+        <label for="area">Área:</label>
+        <input type="text" id="area" name="area" required><br><br>
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required><br><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="departamento">Departamento:</label>
+        <input type="text" id="departamento" name="departamento" required><br><br>
+
+        <label for="salario">Salário:</label>
+        <input type="text" id="salario" name="salario" required><br><br>
+
+        <label for="formacao">Formação:</label>
+        <input type="text" id="formacao" name="formacao" required><br><br>
+
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo" required><br><br>
+
+        <label for="data_inicio">Data de Início:</label>
+        <input type="text" id="data_inicio" name="data_inicio" required><br><br>
+
+        <label for="modo_trabalho">Modo de Trabalho:</label>
+        <input type="text" id="modo_trabalho" name="modo_trabalho" required><br><br>
+
+        <label for="outras_informacoes">Outras Informações:</label><br>
+        <textarea id="outras_informacoes" name="outras_informacoes" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit" class="btn-submit" a href="conexao.php">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <a href="index.html">Voltar para Home</a>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

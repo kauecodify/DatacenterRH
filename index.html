@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>RHSpy</title>
+</head>
+
+<body>
+    <img src="spy.png" width="200px">
+    <h1>Datacenter-RH</h1>
+    <h4>modificações de cargos, salários e locais de trabalho</h4>
+
+    <nav>
+        <ul>
+            <li>
+                <button class="button" onclick="handleButtonClick('home.html')">
+                    <div class="container">
+                        <div class="folder folder_one"></div>
+                        <div class="folder folder_two"></div>
+                        <div class="folder folder_three"></div>
+                        <div class="folder folder_four"></div>
+                    </div>
+                    <div class="active_line"></div>
+                    <span class="text">Database</span>
+                </button>
+            </li>
+            <li>
+                <button class="button" onclick="handleButtonClick('funcionarios.html')">
+                    <div class="container">
+                        <div class="folder folder_one"></div>
+                        <div class="folder folder_two"></div>
+                        <div class="folder folder_three"></div>
+                        <div class="folder folder_four"></div>
+                    </div>
+                    <div class="active_line"></div>
+                    <span class="text">Funcionários</span>
+                </button>
+            </li>
+            <li>
+                <button class="button" onclick="handleButtonClick('cadastrar.html')">
+                    <div class="container">
+                        <div class="folder folder_one"></div>
+                        <div class="folder folder_two"></div>
+                        <div class="folder folder_three"></div>
+                        <div class="folder folder_four"></div>
+                    </div>
+                    <div class="active_line"></div>
+                    <span class="text">Cadastrar</span>
+                </button>
+            </li>
+            <li>
+                <button class="button" onclick="handleButtonClick('confidencial.html')">
+                    <div class="container">
+                        <div class="folder folder_one"></div>
+                        <div class="folder folder_two"></div>
+                        <div class="folder folder_three"></div>
+                        <div class="folder folder_four"></div>
+                    </div>
+                    <div class="active_line"></div>
+                    <span class="text">Confidencial</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <hr>
+    <h2>Consulte acima</h2>
+    <hr>
+
+    <div class="loader" id="loader">
+    </div>
+
+</body>
+
+</html>
