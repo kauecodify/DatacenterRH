@@ -1,0 +1,684 @@
+* {
+    background-color: rgb(131, 151, 93);
+text-align: center;
+}
+
+nav {
+    display: inline-table;
+}
+
+/* Botão file*/
+
+.button-container {
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.3em;
+    height: 5.3em;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.4em;
+    background: rgba(235, 252, 254, 0.8);
+    margin: 0 20px;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 3.5em;
+    height: 3.1em;
+    background: none;
+    overflow: hidden;
+}
+
+.folder {
+    content: "";
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.233);
+}
+
+.folder_one {
+    bottom: 0;
+    width: 100%;
+    height: 88%;
+    border-radius: 3px;
+    border-top: 2px solid rgb(206, 167, 39);
+    background: linear-gradient(-35deg, rgb(238, 194, 47) 5%, rgb(255, 223, 118));
+}
+
+.folder_two {
+    top: 5%;
+    width: 38%;
+    height: 19%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: rgb(206, 167, 39);
+    box-shadow: 0 1px 5px -2px rgba(0, 0, 0, 0.5);
+}
+
+.folder_two::before {
+    content: "";
+    position: absolute;
+    display: inline;
+    left: 88%;
+    width: 0;
+    height: 0;
+    border-left: 7px solid rgb(206, 167, 39);
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+}
+
+.folder_three {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0.5em;
+    bottom: 0;
+    width: 2.5em;
+    height: 0.9em;
+    border-radius: 4px 4px 0 0;
+    background: linear-gradient(-35deg, rgb(25, 102, 218), rgb(109, 165, 249));
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.folder_four {
+    left: 1em;
+    bottom: 0.3em;
+    width: 1.5em;
+    height: 0.18em;
+    border-radius: 1em;
+    background-color: rgb(20, 77, 163);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.active_line {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0.9em;
+    height: 0.4em;
+    background-color: #999;
+    border: none;
+    border-radius: 1em;
+    transition: all 0.15s linear;
+}
+
+.button:active .active_line,
+.button:focus .active_line {
+    width: 2.3em;
+    background-color: rgb(98, 218, 255);
+}
+
+.button:focus .container {
+    animation: wow 1s forwards;
+}
+
+@keyframes wow {
+    20% {
+        scale: 0.8;
+    }
+
+    30% {
+        scale: 1;
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    65% {
+        transform: translateY(4px);
+    }
+
+    80% {
+        transform: translateY(0);
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.text {
+    content: "";
+    position: absolute;
+    top: -4.5em;
+    width: 7.7em;
+    height: 2.6em;
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+    opacity: 0;
+    transition: all 0.25s linear;
+}
+
+.button:hover .text {
+    opacity: 1;
+}
+
+.div  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minimax(150px, 1fr));
+    gap: 10px;
+    background-color: rgb(128, 240, 255);
+    padding: 20px;
+}
+
+.div > div {
+    background-color: rgb(157, 255, 255);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border-radius: 200%;
+    border-style: dotted;
+    border-width: 10%;
+    color: rgb(96, 177, 177);
+}
+
+/* Maquina de lavar*/
+.loader {
+    width: 120px;
+    height: 150px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#ddd 50%, #bbb 51%),
+      linear-gradient(#ddd, #ddd), linear-gradient(#ddd, #ddd),
+      radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+      radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
+      radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%);
+    background-position: 0 20px, 45px 0, 8px 6px, 55px 3px, 75px 3px, 95px 3px;
+    background-size: 100% 4px, 1px 23px, 30px 8px, 15px 15px, 15px 15px, 15px 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    border-radius: 6%;
+    animation: shake 3s ease-in-out infinite;
+    transform-origin: 60px 180px;
+    display: none; /* apenas ao ativar */
+}
+
+.loader:before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 100%;
+    width: 7px;
+    height: 5px;
+    background: #aaa;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 102px 0 #aaa;
+}
+
+.loader:after {
+    content: "";
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 20px;
+    background-color: #bbdefb;
+    background-image: linear-gradient( to right, #0004 0%, #0004 49%, #0000 50%, #0000 100% ),
+      linear-gradient(135deg, #64b5f6 50%, #607d8b 51%);
+    background-size: 30px 100%, 90px 80px;
+    border-radius: 50%;
+    background-repeat: repeat, no-repeat;
+    background-position: 0 0;
+    box-sizing: border-box;
+    border: 10px solid #DDD;
+    box-shadow: 0 0 0 4px #999 inset, 0 0 6px 6px #0004 inset;
+    animation: spin 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+
+    50% {
+      transform: rotate(360deg)
+    }
+
+    75% {
+      transform: rotate(750deg)
+    }
+
+    100% {
+      transform: rotate(1800deg)
+    }
+}
+
+@keyframes shake {
+    65%, 80%, 88%, 96% {
+      transform: rotate(0.5deg)
+    }
+
+    50%, 75%, 84%, 92% {
+      transform: rotate(-0.5deg)
+    }
+
+    0%, 50%, 100% {
+      transform: rotate(0)
+    }
+}
+
+/* pesquisar */
+
+.input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 200px;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #86ffa4;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+    background-color: #B4DE8A;
+  }
+  
+/* Botão de armazenar dados*/
+.input {
+    background-color: #383838;
+    border: 1ex solid none;
+    border-top-width: 1.7em;
+    margin: 0;
+    padding: 0;
+    color: #383838;
+    word-wrap: break-word;
+    outline: 7px solid #383838;
+    height: 30px;
+    font-size: 17px;
+    text-align: center;
+    transition: all 1s;
+    max-width: 190px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+   }
+   
+   .input:hover {
+    border-top-width: 0.2em;
+    background-color: #f1e8e8;
+   }
+   
+   .input:focus {
+    border-top-width: 0.2em;
+    background-color: #f1e8e8;
+   }
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Credencial confidencial */
+.input__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 4px solid #000;
+    max-width: 25%;
+    width: 350px;
+    height: 100px;
+    transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(-10deg);
+    perspective: 1000px;
+    box-shadow: 10px 10px 0 #000;
+  }
+  
+  .input__container:hover {
+    transform: rotateX(5deg) rotateY(1deg) scale(1.05);
+    box-shadow: 25px 25px 0 -5px #e9b50b, 25px 25px 0 0 #000;
+  }
+  
+  .shadow__input {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: translateZ(-50px);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 107, 107, 0.4) 0%,
+      rgba(255, 107, 107, 0.1) 100%
+    );
+    filter: blur(20px);
+  }
+  
+  .input__button__shadow {
+    cursor: pointer;
+    border: 3px solid #000;
+    background: #e9b50b;
+    transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transform: translateZ(20px);
+    position: relative;
+    z-index: 3;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .input__button__shadow:hover {
+    background: #e9b50b;
+    transform: translateZ(10px) translateX(-5px) translateY(-5px);
+    box-shadow: 5px 5px 0 0 #000;
+  }
+  
+  .input__button__shadow svg {
+    fill: #000;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .input__search {
+    width: 100%;
+    outline: none;
+    border: 3px solid #000;
+    padding: 15px;
+    font-size: 18px;
+    background: #fff;
+    color: #000;
+    transform: translateZ(10px);
+    transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 3;
+    font-family: "Roboto", Arial, sans-serif;
+    letter-spacing: -0.5px;
+  }
+  
+  .input__search::placeholder {
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .input__search:hover,
+  .input__search:focus {
+    background: #f0f0f0;
+    transform: translateZ(20px) translateX(-5px) translateY(-5px);
+    box-shadow: 5px 5px 0 0 #000;
+  }
+  
+  .input__container::before {
+    content: "USERNAME";
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #e9b50b;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 14px;
+    transform: translateZ(50px);
+    z-index: 4;
+    border: 2px solid #000;
+  }
+  
+  /* Dashboards */
+  .dashboard-button {
+    display: block;
+    width: 100px;
+    padding: 100px;
+    margin: 0px auto;
+    font-size: 16px;
+    text-align: center;
+    background-color: #bcc2a2;
+    color: #fff;
+    border: 50px;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dashboard-button:hover {
+    background-color: #e9ff6b81;
+}
+
+.metric-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.metric-card {
+    width: 200px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.metric-card .metric-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.charts {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.chart {
+    width: 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.chart img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard button*/
+.dashboard-button {
+    background: #fbca1f;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+  }
+  
+  .dashboard-button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  
+  .dashboard-button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+
+  .forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Músicas */ 
+audio {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  background-color: #75757500;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Botão de voltar */
+.golden-button {
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+
+  
